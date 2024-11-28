@@ -1,22 +1,60 @@
 .profile__image {
-  width: 120px;
-  height: 120px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  margin: 0 29px 0 0;
+    width: 120px;
+    height: 120px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 29px 0 0;
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+
+.profile__image::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+}
+
+.profile__image::after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background: transparent url('../../../images/edit-icon.svg') center no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+    margin: auto;
+}
+
+.profile__image:hover::before,
+.profile__image:hover::after,
+.profile__image:focus-visible::before,
+.profile__image:focus-visible::after {
+    opacity: 1;
 }
 
 @media screen and (max-width: 740px) {
-  .profile__image {
-    margin: 0 10px 0 0;
-  }
+    .profile__image {
+        margin: 0 10px 0 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
-  .profile__image {
-    margin-right: 0;
-  }
+    .profile__image {
+        margin-right: 0;
+    }
 }
