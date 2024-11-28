@@ -1,17 +1,17 @@
 import '../pages/index.css';
 import {createCard} from "./card.js";
-import {openModal, closeModal} from "./modal.js";
-import {enableValidation, clearValidation} from "./validate.js";
+import {closeModal, openModal} from "./modal.js";
+import {clearValidation, enableValidation} from "./validate.js";
 import {
-    getInitialCards,
     addCard,
     deleteCard,
+    getInitialCards,
+    getUserInfo,
     likeCard,
     unLikeCard,
-    getUserInfo,
-    updateUserInfo,
     updateUserAvatar,
-} from "./api";
+    updateUserInfo,
+} from "./api.js";
 
 const validationConfig = {
     formSelector: '.popup__form',
